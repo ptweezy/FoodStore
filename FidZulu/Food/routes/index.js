@@ -24,10 +24,9 @@ function (request, response){
     response.setHeader('content-type', 'application/json');
     var obj = foods.list();
     for (var i = 0; i < obj.length; i++){
-      obj[i].price = (obj[i].price + (obj[i].price * 0.075)).toFixed(2);
+      obj[i].price = (obj[i].price * 1.075).toFixed(2);
     }
-
-  response.end(JSON.stringify(obj));
+    response.end(JSON.stringify(obj));
 
 });
 
@@ -37,10 +36,9 @@ function (request, response){
     response.setHeader('content-type', 'application/json');
     var obj = foods.list();
     for (var i = 0; i < obj.length; i++){
-      obj[i].price = (obj[i].price + (obj[i].price * 0.08)).toFixed(2);
+      obj[i].price = (obj[i].price * 1.08).toFixed(2);
     }
-  
-  response.end(JSON.stringify(obj));
+    response.end(JSON.stringify(obj));
 
 });
 
